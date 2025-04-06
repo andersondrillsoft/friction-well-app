@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrictionWell API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .endpoint {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .method {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: white;
+            font-weight: bold;
+        }
+        .get { background-color: #61affe; }
+        .post { background-color: #49cc90; }
+        .protected { background-color: #fca130; }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>FrictionWell API Documentation</h1>
+    <p>Base URL: <code>https://frictionwell.drillsoft.com/api/v1</code></p>
+
+    <div class="endpoint">
+        <h2>Public Endpoints</h2>
+        
+        <h3>Get Subscription Plans</h3>
+        <span class="method get">GET</span>
+        <code>/subscription-plans</code>
+        <p>Returns all active subscription plans.</p>
+
+        <h3>Get Latest App Version</h3>
+        <span class="method get">GET</span>
+        <code>/app-versions/latest</code>
+        <p>Returns the latest version of the application.</p>
+    </div>
+
+    <div class="endpoint">
+        <h2>Protected Endpoints</h2>
+        <p>These endpoints require authentication using a Bearer token.</p>
+        
+        <h3>Get User Profile</h3>
+        <span class="method get protected">GET</span>
+        <code>/user</code>
+        <p>Returns the authenticated user's profile.</p>
+
+        <h3>Get User Subscription</h3>
+        <span class="method get protected">GET</span>
+        <code>/user/subscription</code>
+        <p>Returns the user's active subscription details.</p>
+
+        <h3>Create Calculation</h3>
+        <span class="method post protected">POST</span>
+        <code>/calculations</code>
+        <p>Creates a new calculation for the authenticated user.</p>
+
+        <h3>Get User Calculations</h3>
+        <span class="method get protected">GET</span>
+        <code>/calculations</code>
+        <p>Returns the user's calculation history.</p>
+    </div>
+
+    <div class="endpoint">
+        <h2>Authentication</h2>
+        <p>Protected endpoints require a Bearer token in the Authorization header:</p>
+        <code>Authorization: Bearer your-token-here</code>
+    </div>
+</body>
+</html> 
